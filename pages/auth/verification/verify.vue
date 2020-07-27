@@ -25,14 +25,12 @@
 <script>
 export default {
   async asyncData({ params, query, app }) {
-    const q = await Object.keys(query)
-      .map(k => `${k}=${query[k]}`)
-      .join('&');
-      console.log(q);
+    const q = await Object.keys(query).map(k => `${k}=${query[k]}`).join('&');
     try {
       const { data } = await app.$axios.post(
         `/verification/verify/${params.id}?${q}`
       );
+      console.log(data);
       return { success: true, status: data.message };
     } catch (e) {
       return { success: false, status: e.response.data.errors.message };

@@ -39,7 +39,7 @@
                                 placeholder="Search and hit enter..."
                             />
                             <div class="search-icon text-white">
-                                <i class="fas fa-search"></i>
+                                <!-- <i class="fas fa-search"></i> -->
                             </div>
                         </div>
                     </form>
@@ -48,7 +48,8 @@
                     class="upload-shot white-path font-14 fw-500 text-uppercase mr-auto"
                 >
                     <a href="#" class="primary-bg-color text-white">
-                        <i class="fas fa-cloud-upload-alt"></i> Upload
+                        <!-- <i class="fas fa-cloud-upload-alt"></i> -->
+                        Upload
                     </a>
                 </div>
             </div>

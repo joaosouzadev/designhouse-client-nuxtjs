@@ -17,10 +17,10 @@
                 <div class="col-md-4 text-right">
                     <div class="footer-social">
                         <a href="#" title="Facebook">
-                            <i class="fab fa-facebook-square"></i>
+                            <!-- <i class="fab fa-facebook-square"></i> -->
                         </a>
                         <a href="#" title="twitter">
-                            <i class="fab fa-twitter-square"></i>
+                            <!-- <i class="fab fa-twitter-square"></i> -->
                         </a>
                     </div>
                 </div>

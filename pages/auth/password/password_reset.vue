@@ -2,7 +2,7 @@
   <section class="authentication">
     <div class="auth-body">
       <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
-        Reset Password
+        Criar nova senha
       </h1>
       <form class="auth-form" @submit.prevent="submit">
         <alert-success :form="form">
@@ -12,26 +12,35 @@
           </p>
         </alert-success>
         <div class="form-group">
-          	<input type="text" name="email" readonly v-model="form.email" class="form-control form-control-lg font-14 fw-300" :class="{ 'is-invalid': form.errors.has('email') }" placeholder="Email"></input>
-            <has-error :form="form" field="email"></has-error>
+            <base-input
+                :form="form"
+                field="email"
+                v-model="form.email"
+                placeholder="Email"
+            ></base-input>
         </div>
 
         <div class="form-group">
-            <input type="password" name="password" v-model="form.password" class="form-control form-control-lg font-14 fw-300" :class="{ 'is-invalid': form.errors.has('password') }" placeholder="Senha"></input>
-            <has-error :form="form" field="password"></has-error>
+            <base-input
+                :form="form"
+                field="email"
+                inputType="password"
+                v-model="form.password"
+                placeholder="Senha"
+            ></base-input>
         </div>
-
         <div class="form-group">
-            <input type="password" name="password_confirmation" v-model="form.password_confirmation" class="form-control form-control-lg font-14 fw-300" placeholder="Confirmar Senha"></input>
+            <base-input
+                :form="form"
+                field="email"
+                inputType="password"
+                v-model="form.password_confirmation"
+                placeholder="Confirme sua senha"
+            ></base-input>
         </div>
 
         <div class="text-right">
-          <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
-          	<span v-if="form.busy">
-          	    <i class="fas fa-spinner fa-spin"></i>
-          	</span>
-            Criar nova senha
-          </button>
+          <base-button :loading="form.busy">Criar nova senha</base-button>
         </div>
         <p class="font-14 fw-400 text-center mt-4">
           <nuxt-link :to="{ name: 'login' }" class="color-blue">
@@ -45,7 +54,7 @@
 
 <script>
 export default {
-  // middleware: ['guest'],
+  middleware: ['guest'],
   data() {
     return {
       status: '',

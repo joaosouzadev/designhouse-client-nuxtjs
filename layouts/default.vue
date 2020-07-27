@@ -2,7 +2,7 @@
   <div>
     <SiteNavigation></SiteNavigation>
     <div class="wrapper">
-      <Nuxt />
+      <nuxt />
     </div>
     <SiteFooter></SiteFooter>
   </div>

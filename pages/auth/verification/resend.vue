@@ -13,23 +13,15 @@
                     O e-mail de verificação foi reenviado.
                 </alert-success>
 	            <div class="form-group">
-	                <input
-	                    type="text"
-	                    name="email"
-	                    v-model="form.email"
-	                    class="form-control form-control-lg font-14 fw-300"
-	                    :class="{'is-invalid': form.errors.has('email') }"
-	                    placeholder="Email"
-	                />
-                	<has-error :form="form" field="email"></has-error>
-	            </div>
+                    <base-input
+                        :form="form"
+                        field="email"
+                        v-model="form.email"
+                        placeholder="Email"
+                    ></base-input>
+                </div>
 	            <div class="text-right">
-	                <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
-	                    <span v-if="form.busy">
-	                        <i class="fas fa-spinner fa-spin"></i>
-	                    </span>
-	                    Reenviar
-	                </button>
+	                <base-button :loading="form.busy">Reenviar</base-button>
 	            </div>
 	            <p class="font-14 fw-400 text-center mt-4">
 	                <nuxt-link to="/login" class="color-blue" href="#">Ir para login</nuxt-link>
@@ -41,6 +33,7 @@
 
 <script>
 export default {
+	middleware: ['guest'],
 	data() {
 		return {
 			form: this.$vform({
